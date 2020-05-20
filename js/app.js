@@ -53,6 +53,13 @@ class Interfaz {
     console.log(li)
     gastosListado.appendChild(li);
   }
+  presupuestoRestante(cantidadGasto) {
+    const restante = document.getElementById('restante'),
+          presupuestoRestanteUsuario = cantidadPresupuesto.presupuestoRestante(cantidadGasto);
+    console.log(presupuestoRestanteUsuario)
+
+    restante.innerHTML = `${presupuestoRestanteUsuario}`
+  }
 }
 
 // EventListeners
@@ -84,5 +91,6 @@ formulario.addEventListener('submit', function(e) {
   } else {
     ui.imprimirMensaje('Se agrego al carrito', 'success')
     ui.agregarGastoAListado(nombreGasto, cantidadGasto)
+    ui.presupuestoRestante(cantidadGasto)
   }
 })
